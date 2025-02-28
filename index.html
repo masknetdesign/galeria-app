@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Simples</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Minha Galeria</h1>
+        
+        <!-- Botões principais -->
+        <div class="controls">
+            <button id="capture-btn">Tirar Foto/Vídeo</button>
+            <button id="upload-btn">Escolher da Galeria</button>
+            <button id="create-album-btn">Criar Álbum</button>
+        </div>
+
+        <!-- Input oculto para upload -->
+        <input type="file" id="file-input" accept="image/*,video/*" multiple style="display: none;">
+
+        <!-- Lista de álbuns -->
+        <div id="albums-list">
+            <h2>Álbuns</h2>
+            <div id="albums-container"></div>
+        </div>
+
+        <!-- Modal para captura -->
+        <div id="capture-modal" class="modal">
+            <video id="video" autoplay></video>
+            <canvas id="canvas" style="display: none;"></canvas>
+            <div class="modal-controls">
+                <button id="snap-photo">Capturar Foto</button>
+                <button id="record-video">Gravar Vídeo</button>
+                <button id="stop-record" style="display: none;">Parar Gravação</button>
+                <button id="close-modal">Fechar</button>
+            </div>
+        </div>
+
+        <!-- Modal para visualização em tela cheia -->
+        <div id="fullscreen-modal" class="modal">
+            <div id="fullscreen-content"></div>
+            <button id="close-fullscreen">Fechar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

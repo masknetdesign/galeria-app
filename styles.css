@@ -1,0 +1,222 @@
+/* Reset básico e estilo geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container principal */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Título */
+h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+/* Controles (botões) */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Estilo específico para cada botão */
+#capture-btn {
+    background-color: #e74c3c;
+}
+
+#capture-btn:hover {
+    background-color: #c0392b;
+}
+
+#upload-btn {
+    background-color: #2ecc71;
+}
+
+#upload-btn:hover {
+    background-color: #27ae60;
+}
+
+#create-album-btn {
+    background-color: #f1c40f;
+    color: #333;
+}
+
+#create-album-btn:hover {
+    background-color: #d4ac0d;
+}
+
+/* Lista de álbuns */
+#albums-list h2 {
+    font-size: 22px;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+#albums-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Estilo dos álbuns */
+.album {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.album:hover {
+    transform: scale(1.03);
+}
+
+.album h3 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 8px;
+}
+
+.media-grid img, .media-grid video {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.media-grid img:hover, .media-grid video:hover {
+    opacity: 0.9;
+}
+
+.media-grid button {
+    font-size: 12px;
+    padding: 5px;
+    background-color: #e74c3c;
+    margin-top: 5px;
+}
+
+/* Modal de captura */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+#video, #canvas {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color: #000;
+}
+
+.modal-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Modal de tela cheia */
+#fullscreen-modal {
+    padding: 20px;
+}
+
+#fullscreen-content img, #fullscreen-content video {
+    max-width: 95%;
+    max-height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+#close-fullscreen {
+    margin-top: 15px;
+    background-color: #95a5a6;
+}
+
+#close-fullscreen:hover {
+    background-color: #7f8c8d;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #albums-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .album {
+        padding: 10px;
+    }
+}
